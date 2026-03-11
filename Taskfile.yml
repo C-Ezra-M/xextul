@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  xipzu:
+    cmds:
+      - jekyll s -s src
+  pal:
+    #cmds:
+      #- task: jdikygau
+      #- task: zbasu-poho
+  #pal-so:
+    cmds:
+      - jekyll b -s src
+  get_vlaste:
+    cmds:
+      - curl https://raw.githubusercontent.com/Xextan/vlabuk/refs/heads/main/words.json > src/words.json
