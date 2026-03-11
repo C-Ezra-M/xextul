@@ -13,6 +13,6 @@ tasks:
   #pal-so:
     cmds:
       - jekyll b -s src
-  get_vlaste:
+  get-vlaste:
     cmds:
-      - curl https://raw.githubusercontent.com/Xextan/vlabuk/refs/heads/main/words.json > src/words.json
+      - cp vlabuk/words.json src/words.json

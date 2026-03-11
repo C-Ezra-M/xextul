@@ -1,4 +1,4 @@
-import dict from 'https://raw.githubusercontent.com/Xextan/vlabuk/refs/heads/main/words.json' with { type: 'json' };
+import dict from './words.json' with { type: 'json' };
 
 const ALLOWED_PATTERNS = [
     'b_l', 'b_k', 'b_n', 'b_p', 'b_t',
