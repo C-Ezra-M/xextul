@@ -25,16 +25,20 @@ const ALLOWED_PATTERNS = [
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
 for (let i of ALLOWED_PATTERNS) {
-    const words = VOWELS.map(e => dict.data.find(f => f.word === i.replace('_', e)))
+    const words = VOWELS.map(e => {
+        const word = i.replace('_', e);
+        return dict.data.find(f => f.word === word) ?? { word, def: null }
+    })
     $("#dictionary").appendChild($.create({
         tag: "tr",
-        children: [
+        contents: [
             {
                 tag: "th",
                 contents: i,
             },
             ...words.map(e => ({
                 tag: "td",
+                className: e.def ? "" : "unassigned",
                 contents: [
                     {
                         tag: "b",
@@ -46,7 +50,7 @@ for (let i of ALLOWED_PATTERNS) {
                     },
                     {
                         tag: "span",
-                        contents: e.def,
+                        contents: e.def ?? "—",
                     }
                 ]
             }))
