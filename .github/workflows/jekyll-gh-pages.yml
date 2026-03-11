@@ -31,7 +31,7 @@ jobs:
       - name: Install Task
         uses: go-task/setup-task@v1
       - name: Copy dictionary data
-        run: pwd; task get-vlaste
+        run: pwd; ls; task get-vlaste
       - name: Setup Pages
         uses: actions/configure-pages@v5
       #- name: Distill the jbovlaste dataset
