@@ -31,7 +31,10 @@ jobs:
       - name: Install Task
         uses: go-task/setup-task@v1
       - name: Copy dictionary data
-        run: pwd; ls; ls vlabuk; task get-vlaste
+        run: |
+          git submodule init
+          git submodule update
+          task get-vlaste
       - name: Setup Pages
         uses: actions/configure-pages@v5
       #- name: Distill the jbovlaste dataset
