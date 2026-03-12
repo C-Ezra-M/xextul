@@ -65,3 +65,25 @@ header {
 hr.full {
     clear: both;
 }
+
+.dictionary-wrapper {
+    container: dict-wrap / inline-size;
+}
+
+@container dict-wrap (width <= 368px) {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+@container dict-wrap (width <= 418px) {
+    #dictionary {
+        font-size: 0.75em;
+    }
+}
+
+@container dict-wrap (418px <= width <= 488px) {
+    #dictionary {
+        font-size: 0.85em;
+    }
+}

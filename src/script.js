@@ -34,6 +34,7 @@ for (let i of ALLOWED_PATTERNS) {
         contents: [
             {
                 tag: "th",
+                className: "sm-hidden",
                 contents: i,
             },
             ...words.map(e => ({
