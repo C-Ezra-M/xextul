@@ -30,6 +30,10 @@ table > * > * > :is(td:empty, th:empty),
     background-color: #DDD;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 .swatch {
     width: 1em;
     height: 1em;
