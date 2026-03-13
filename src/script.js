@@ -1,5 +1,13 @@
 import dict from './words.json' with { type: 'json' };
 
+function linkToVlabuk(word) {
+    const url = new URL("https://xextan.github.io/vlabuk/")
+    if (word) {
+        url.search = new URLSearchParams({ q: word })
+    }
+    return url.toString()
+}
+
 const ALLOWED_PATTERNS = [
     'b_l', 'b_k', 'b_n', 'b_p', 'b_t',
     'd_l', 'd_k', 'd_n', 'd_p', 'd_t',
@@ -44,7 +52,13 @@ for (let i of ALLOWED_PATTERNS) {
                     {
                         tag: "b",
                         lang: "art-x-xextan",
-                        contents: e.word,
+                        contents: [
+                            e.def ? {
+                                tag: "a",
+                                href: linkToVlabuk(e.word),
+                                contents: e.word,
+                            } : e.word
+                        ],
                     },
                     {
                         tag: "br",
