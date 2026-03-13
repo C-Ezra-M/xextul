@@ -8,7 +8,7 @@ function linkToVlabuk(word) {
     return url.toString()
 }
 
-const ALLOWED_PATTERNS = [
+const ALLOWED_ROOT_PATTERNS = [
     'b_l', 'b_k', 'b_n', 'b_p', 'b_t',
     'd_l', 'd_k', 'd_n', 'd_p', 'd_t',
     'f_l', 'f_k', 'f_n', 'f_p', 'f_t',
@@ -30,9 +30,27 @@ const ALLOWED_PATTERNS = [
     'zb_', 'zd_', 'zg_', 'zl_', 'zn_',
     'qb_', 'qd_', 'qg_', 'ql_', 'qn_',
 ]
+const ALLOWED_PARTICLE_PATTERNS = [
+    'b_', 'd_', 'f_', 'g_', 'j_',
+    'k_', 'l_', 'n_', 'p_', 'q_',
+    's_', 't_', 'v_', 'w_', 'x_', 'z_',
+    'bi_', 'di_', 'fi_', 'gi_',
+    'ki_', 'li_', 'ni_', 'pi_', 'qi_',
+    'si_', 'ti_', 'vi_', 'xi_', 'zi_',
+    'bu_', 'du_', 'fu_', 'gu_',
+    'ku_', 'lu_', 'nu_', 'pu_', 'qu_',
+    'su_', 'tu_', 'vu_', 'xu_', 'zu_',
+    'b_i', 'd_i', 'f_i', 'g_i', 'j_i',
+    'k_i', 'l_i', 'n_i', 'p_i', 'q_i',
+    's_i', 't_i', 'v_i', 'w_i', 'x_i', 'z_i',
+    'b_u', 'd_u', 'f_u', 'g_u', 'j_u',
+    'k_u', 'l_u', 'n_u', 'p_u', 'q_u',
+    's_u', 't_u', 'v_u', 'w_u', 'x_u', 'z_u',
+]
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+const DIPHTHONG_VOWELS = ['a', 'e', 'o'];
 
-for (let i of ALLOWED_PATTERNS) {
+for (let i of ALLOWED_ROOT_PATTERNS) {
     const words = VOWELS.map(e => {
         const word = i.replace('_', e);
         return dict.data.find(f => f.word === word) ?? { word, def: null }
