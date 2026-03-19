@@ -55,8 +55,10 @@ for (let i of ALLOWED_ROOT_PATTERNS) {
         const word = i.replace('_', e);
         return dict.data.find(f => f.word === word) ?? { word, def: null }
     })
+    const allAssigned = words.every(e => e.def)
     $("#dictionary").appendChild($.create({
         tag: "tr",
+        className: allAssigned ? "all-assigned" : "",
         contents: [
             {
                 tag: "th",
@@ -65,7 +67,7 @@ for (let i of ALLOWED_ROOT_PATTERNS) {
             },
             ...words.map(e => ({
                 tag: "td",
-                className: e.def ? "" : "unassigned",
+                className: e.def ? "assigned" : "unassigned",
                 contents: [
                     {
                         tag: "b",
@@ -90,3 +92,6 @@ for (let i of ALLOWED_ROOT_PATTERNS) {
         ]
     }))
 }
+$("#hide-existing").addEventListener("change", () => {
+    $(".dictionary").classList.toggle("hide-existing")
+})

@@ -46,6 +46,14 @@ table {
     border-collapse: collapse;
 }
 
+table.hide-existing td.assigned {
+    visibility: hidden;
+}
+
+table.hide-existing tr.all-assigned {
+    display: none;
+}
+
 header {
     display: flex;
     flex-wrap: wrap;
