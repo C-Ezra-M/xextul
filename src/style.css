@@ -19,7 +19,7 @@ dfn {
 
 table > * > :is(td, th),
 table > * > * > :is(td, th) {
-    border: 1px solid;
+    border: 1px solid #618;
     padding: 1px 2px;
     text-align: center;
 }
@@ -86,4 +86,17 @@ hr.full {
     #dictionary {
         font-size: 0.85em;
     }
+}
+
+fieldset {
+    margin: 0 0 1em 0;
+    border: 1px solid #618;
+}
+
+hr {
+    border-left: none;
+    border-right: none;
+    border-top: 1px double #618;
+    border-bottom: 1px double #618;
+    height: 1px;
 }
