@@ -100,3 +100,7 @@ hr {
     border-bottom: 1px double #618;
     height: 1px;
 }
+
+input {
+    accent-color: #618;
+}
